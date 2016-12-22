@@ -8,6 +8,8 @@
         <variable
             name="viewModel"
             type="com.example.lh.architecture.ui.repo.RepositoryViewModel"/>
+        <import type="com.lhalcyon.bindlite.adapter.image.config.BitmapShape"/>
+        <import type="com.example.lh.architecture.R"/>
     </data>
 
     <RelativeLayout
@@ -109,11 +111,13 @@
                 app:visibility="@{viewModel.ownerLayoutVisibility}"
                 tools:visibility="visible">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/image_owner"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    app:imageUrl="@{viewModel.ownerAvatarUrl}"/>
+                    app:url="@{viewModel.ownerAvatarUrl}"
+                    app:placeholder="@{R.mipmap.placeholder}"
+                    app:transform="@{BitmapShape.CIRCLE}"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
